@@ -586,6 +586,59 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1817848275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1817848277}
+  - component: {fileID: 1817848276}
+  m_Layer: 0
+  m_Name: ObstacleSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1817848276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817848275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5080513322c903243b5bb57844238037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstocleSpawn
+  obstaclePrefabs:
+  - {fileID: 4959703271013346838, guid: 6d6fb70839dd1ce4481c3845e2b8f8f2, type: 3}
+  - {fileID: 386027714954291396, guid: a253d05b07c9752409d3ed8e93eb2023, type: 3}
+  - {fileID: 945833878571563152, guid: 08fbbd3c8e45e864da5c20388df9bc77, type: 3}
+  - {fileID: 890692634431785718, guid: 4c1667ada8c631d4d9690939c3eafac6, type: 3}
+  - {fileID: 2061013602299012019, guid: 6044b25a359f621409a2622d5ad9cdc9, type: 3}
+  obstacleSpawnTime: 2
+  obstacleParent: {fileID: 1817848277}
+  spawnWidth: 4
+--- !u!4 &1817848277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817848275}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5, z: 40}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1884729718
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,3 +822,4 @@ SceneRoots:
   - {fileID: 1783285398}
   - {fileID: 1884729720}
   - {fileID: 280183875}
+  - {fileID: 1817848277}
