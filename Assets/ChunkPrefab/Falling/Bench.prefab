@@ -73,7 +73,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1854674612789590260, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_Mass
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1854674612789590260, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_LinearDamping
@@ -81,36 +81,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1854674612789590260, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_AngularDamping
-      value: 0.4
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3800026019888676715, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_Size.x
-      value: 2.0376754
+      value: 2.1971083
       objectReference: {fileID: 0}
     - target: {fileID: 3800026019888676715, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_Size.y
-      value: 0.6602318
+      value: 0.92569625
       objectReference: {fileID: 0}
     - target: {fileID: 3800026019888676715, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_Size.z
-      value: 0.76524043
+      value: 0.9431513
       objectReference: {fileID: 0}
     - target: {fileID: 3800026019888676715, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_Center.x
-      value: 0.49926567
+      value: 0.4880209
       objectReference: {fileID: 0}
     - target: {fileID: 3800026019888676715, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_Center.y
-      value: 0.28121775
+      value: 0.32042325
       objectReference: {fileID: 0}
     - target: {fileID: 3800026019888676715, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_Center.z
-      value: 0.13913566
+      value: 0.1340374
       objectReference: {fileID: 0}
     - target: {fileID: 3800026019888676715, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 13400000, guid: 64def993082f48644821dca3478800e3, type: 2}
+      objectReference: {fileID: 13400000, guid: 1895361c856b28741b09fe7d36a81a0a, type: 2}
     - target: {fileID: 7043564100673125914, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_Name
       value: Bench

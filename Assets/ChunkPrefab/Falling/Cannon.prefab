@@ -77,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3800026019888676715, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_Size.y
-      value: 0.597394
+      value: 1.4522495
       objectReference: {fileID: 0}
     - target: {fileID: 3800026019888676715, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_Size.z
@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3800026019888676715, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_Center.y
-      value: 1.0449998
+      value: 0.7239926
       objectReference: {fileID: 0}
     - target: {fileID: 3800026019888676715, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_Center.z
@@ -98,7 +98,7 @@ PrefabInstance:
     - target: {fileID: 3800026019888676715, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 13400000, guid: 64def993082f48644821dca3478800e3, type: 2}
+      objectReference: {fileID: 13400000, guid: 1895361c856b28741b09fe7d36a81a0a, type: 2}
     - target: {fileID: 7043564100673125914, guid: 1631d037532040e409852dbb9f6f81c4, type: 3}
       propertyPath: m_Name
       value: Cannon
