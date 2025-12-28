@@ -26,7 +26,7 @@ public class Chunk : MonoBehaviour
         int fencesToSpawn = Random.Range(0, lanes.Length); // Spawn between 0 and 2 fences
         for (int i = 0; i < fencesToSpawn; i++)
         {
-            if (availableLanes.Count == 0) break;
+            if (availableLanes.Count <= 0) break;
             int selectLane = SelectLane();
 
             Vector3 spawnPosition = new Vector3(lanes[selectLane], transform.position.y, transform.position.z);
@@ -51,7 +51,7 @@ public class Chunk : MonoBehaviour
         int coinsToSpawn = Random.Range(1, maxCoinsToSpawn);
         float topOfChunkZ = transform.position.z + (coinSeperationLength*2f);
 
-        for (int i = 0; i < coinsToSpawn && i < maxCoinsToSpawn; i++)
+        for (int i = 0; i < coinsToSpawn; i++)
         {
             float spawnPositionZ = topOfChunkZ - (i * coinSeperationLength);
 
