@@ -3,14 +3,22 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] Cameracontroller cameraController;
     [SerializeField] GameObject chunkPrefab;
-    [SerializeField] int startingChunksAmount = 12;
     [SerializeField] Transform chunkParent;
+    [SerializeField] ScoreManager scoreManager;
 
+    [Header("LevelSettings")]//Tooltip Attribute
+    [SerializeField] int startingChunksAmount = 12;
+    [Tooltip("Do not change this value unless you know what you are doing")]
     [SerializeField] float chunkLength = 10f;
     [SerializeField] float moveSpeed = 8f;
     [SerializeField] float minMoveSpeed = 2f;
+    [SerializeField] float maxMoveSpeed = 20f;
+    [SerializeField] float minGravityZ= -22f;
+    [SerializeField] float maxGravityZ= -2f;
+
 
     List<GameObject> chunks = new List<GameObject>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,13 +32,18 @@ public class LevelGenerator : MonoBehaviour
     }
     public void ChangeChunkMoveSpeed(float speedAmount)
     {
-        moveSpeed += speedAmount;
-        if(moveSpeed < minMoveSpeed)
+        float newMoveSpeed = moveSpeed + speedAmount;
+        newMoveSpeed = Mathf.Clamp(newMoveSpeed, minMoveSpeed, maxMoveSpeed);
+        if(newMoveSpeed != moveSpeed)
         {
-            moveSpeed = minMoveSpeed;
+            moveSpeed = newMoveSpeed;
+            float newGravityZ = Physics.gravity.z - speedAmount;
+            newGravityZ = Mathf.Clamp(newGravityZ, minGravityZ, maxGravityZ);
+            Physics.gravity = new Vector3(Physics.gravity.x, Physics.gravity.y, newGravityZ);
+            cameraController.ChangeCameraFOV(speedAmount);
+
+
         }
-        Physics.gravity = new Vector3(Physics.gravity.x, Physics.gravity.y, Physics.gravity.z + speedAmount);
-        cameraController.ChangeCameraFOV(speedAmount);
     }
 
     void SpawnChunks()
@@ -45,8 +58,10 @@ public class LevelGenerator : MonoBehaviour
     {
         float spawnPositionZ = CalculateSpawnPositionZ();
         Vector3 chunkPosition = new Vector3(transform.position.x, transform.position.y, spawnPositionZ);
-        GameObject newChunk = Instantiate(chunkPrefab, chunkPosition, Quaternion.identity, chunkParent);
-        chunks.Add(newChunk);
+        GameObject newChunkG = Instantiate(chunkPrefab, chunkPosition, Quaternion.identity, chunkParent);
+        chunks.Add(newChunkG);
+        Chunk newChunk = newChunkG.GetComponent<Chunk>();
+        newChunk.Init(this, scoreManager);
     }
 
     float CalculateSpawnPositionZ()

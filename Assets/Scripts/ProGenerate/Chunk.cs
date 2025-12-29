@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Chunk : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Chunk : MonoBehaviour
     [SerializeField] float coinSeperationLength = 2f;
     [SerializeField] float[] lanes = {-2.5f, 0f, 2.5f};
     List<int> availableLanes = new List<int>{0,1,2};
+    LevelGenerator levelGenerator;
+    ScoreManager scoreManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,6 +21,11 @@ public class Chunk : MonoBehaviour
         SpawnFences();
         SpawnApple();
         SpawnCoins();
+    }
+    public void Init(LevelGenerator levelGenerator, ScoreManager scoreManager)
+    {
+        this.levelGenerator = levelGenerator;// fast way to assign levelgenerator reference
+        this.scoreManager = scoreManager;
     }
 
     // Update is called once per frame
@@ -40,7 +48,8 @@ public class Chunk : MonoBehaviour
         if(Random.value > appleSpawnChance || availableLanes.Count <= 0) return;
         int selectLane = SelectLane();
         Vector3 spawnPosition = new Vector3(lanes[selectLane], transform.position.y, transform.position.z);
-        Instantiate(applePrefab, spawnPosition, Quaternion.identity, this.transform);
+        Apple newApple= Instantiate(applePrefab, spawnPosition, Quaternion.identity, this.transform).GetComponent<Apple>();
+        newApple.Init(levelGenerator);
     
     }
     void SpawnCoins()
@@ -56,7 +65,8 @@ public class Chunk : MonoBehaviour
             float spawnPositionZ = topOfChunkZ - (i * coinSeperationLength);
 
             Vector3 spawnPosition = new Vector3(lanes[selectLane], transform.position.y, spawnPositionZ);
-            Instantiate(coinPrefab, spawnPosition, Quaternion.identity, this.transform);
+            Coins newCoin = Instantiate(coinPrefab, spawnPosition, Quaternion.identity, this.transform).GetComponent<Coins>();
+            newCoin.Init(scoreManager);
         }
         
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Cameracontroller : MonoBehaviour
 {
+    [SerializeField] ParticleSystem SpeedupParticleSystem;
     [SerializeField] float minFOV = 20f;
     [SerializeField] float maxFOV = 120f;
     [SerializeField] float zoommDuration = 1f;
@@ -17,6 +18,11 @@ public class Cameracontroller : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(ChangeFOCRountine(speedAmount));
+        if(speedAmount > 0)
+        {
+            SpeedupParticleSystem.Play();
+        }
+       
     }
     IEnumerator ChangeFOCRountine(float speedAmount)
     {
