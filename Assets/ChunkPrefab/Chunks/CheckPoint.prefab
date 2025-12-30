@@ -532,6 +532,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1679594069313495340, guid: aea4aab4d0b8cea45a3ec34bd7521a77, type: 3}
+      propertyPath: coinSpawnChance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1679594069313495340, guid: aea4aab4d0b8cea45a3ec34bd7521a77, type: 3}
+      propertyPath: appleSpawnChance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7902896244395871537, guid: aea4aab4d0b8cea45a3ec34bd7521a77, type: 3}
       propertyPath: m_Name
       value: CheckPoint
@@ -632,7 +640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6197735954612823630, guid: d11cbcf1bd1e5f346839e2f676d89830, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.24
+      value: -0.71
       objectReference: {fileID: 0}
     - target: {fileID: 6197735954612823630, guid: d11cbcf1bd1e5f346839e2f676d89830, type: 3}
       propertyPath: m_LocalPosition.z
