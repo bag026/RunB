@@ -1,12 +1,17 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
     [SerializeField] PlayerController playerController;
     [SerializeField] TMP_Text timeText;
     [SerializeField] GameObject gameOverText;
+    [SerializeField] Button restartButton;
+    [SerializeField] Button returnToMenuButton;
+
 
 
     [SerializeField] float startTime = 5f;
@@ -20,6 +25,7 @@ public class TimeManager : MonoBehaviour
     void Start()
     {
         timeLeft = startTime;
+        Time.timeScale = 1f;
     }
     void Update()
     {
@@ -47,6 +53,19 @@ public class TimeManager : MonoBehaviour
         isGameOver = true;
         playerController.enabled = false;
         gameOverText.SetActive(true);
+        restartButton.gameObject.SetActive(true);
+        returnToMenuButton.gameObject.SetActive(true);
         Time.timeScale = .1f;
     }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("MainLevel");
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
 }
